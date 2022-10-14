@@ -1,0 +1,396 @@
+* {
+    font-family: 'Barlow Semi Condensed', Courier, monospace;
+    margin: 0;
+}
+body {
+    background-image: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 40%;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    padding: 5px;
+    font-size: 2em;
+    font-weight: 400;
+}
+.head-info {
+    display: flex;
+    flex-direction: column;
+}
+.hiText {
+    color: #fff;
+    margin-bottom: -5px;
+}
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 40%;
+    height: 98px;
+    border-radius: 15px;
+}
+#triangle {
+    position: relative;
+    margin: 100px;
+}
+.triangleOff {
+    display: none;
+}
+#rock {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 26%;
+    top: 60%;
+    height: 150px;
+    width: 150px;
+    background-color: hsl(349, 71%, 52%);
+}
+.chosenRock {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    background-color: hsl(349, 71%, 52%);
+}
+#rock:hover {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 26%;
+    top: 60%;
+    height: 170px;
+    width: 170px;
+    background-color: hsl(349, 71%, 52%);
+    cursor: pointer;
+}
+#paper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -10%;
+    top: -15%;
+    height: 150px;
+    width: 150px;
+    background-color: hsl(230, 89%, 62%);
+}
+.chosenPaper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    background-color: hsl(230, 89%, 62%);
+}
+#paper:hover {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -10%;
+    top: -15%;
+    height: 170px;
+    width: 170px;
+    background-color: hsl(230, 89%, 62%);
+    cursor: pointer;
+}
+#scissors {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 65%;
+    top: -15%;
+    height: 150px;
+    width: 150px;
+    background-color: hsl(39, 89%, 49%);
+}
+.chosenScissors {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    background-color: hsl(39, 89%, 49%);
+}
+#scissors:hover {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 65%;
+    top: -15%;
+    height: 170px;
+    width: 170px;
+    background-color: hsl(39, 89%, 49%);
+    cursor: pointer;
+}
+.options {
+    position: relative;
+    border-radius: 50%;
+}
+.circles {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
+    background-color: hsl(38, 50%, 97%);
+}
+#userVsComputer {
+    position: relative;
+    display: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 2;
+    height: 200px;
+    width: 40%;
+}
+#user {
+    position: absolute;
+    display: flex;
+    height: 150px;
+    width: 150px;
+    left: 5px;
+    border-radius: 50%;
+}
+#computer {
+    position: absolute;
+    display: flex;
+    height: 150px;
+    width: 150px;
+    right: 5px;
+    background-color:hsl(214, 48%, 35%);
+    border-radius: 50%;
+}
+#pointers {
+    position: relative;
+    display: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 2;
+    height: 200px;
+    width: 40%;
+}
+#computerPointer {
+    position: absolute;
+    right: 5px;
+}
+#userPointer {
+    position: absolute;
+    left: 5px;
+}
+#pointersBottom {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: -100px;
+    width: 50%;
+    margin-left: 25%;
+}
+#winner {
+    font-size: 2em;
+}
+#playAgain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.0em;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    height: 30px;
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+#rulesDialogBox {
+    position: absolute;
+    top: 20%;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid #000;
+    height: 50%;
+    min-width: 500px;
+    width: 30%;
+    z-index: 3;
+    background-color: #fff;
+}
+#rulesDialogBoxTitle {
+    position: relative;
+    top: -40%;
+    left: 5%;
+    font-size: 2em;
+}
+#rulesDialogBoxSvg {
+    position: relative;
+    right: 10%;
+    top: 8%;
+}
+#rulesDialogBoxClose {
+    position: relative;
+    top: -40%;
+    right: 5%;
+}
+.rules {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    margin: 10px;
+    padding: 10px;
+}
+@media  screen and (max-width: 500px) {
+    .head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        width: 90%;
+        height: 100px;
+        margin: 20px;
+        padding: 5px;
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+    .head-info {
+        display: flex;
+        flex-direction: column;
+    }
+    .hiText {
+        color: #fff;
+        margin-bottom: -5px;
+    }
+    .scoreboard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        width: 40%;
+        height: 98px;
+        border-radius: 15px;
+    }
+    #userVsComputer {
+        position: relative;
+        display: none;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        z-index: 2;
+        height: 200px;
+        width: 90%;
+    }
+    #user {
+        position: absolute;
+        display: flex;
+        height: 150px;
+        width: 150px;
+        left: 5px;
+        border-radius: 50%;
+    }
+    #computer {
+        position: absolute;
+        display: flex;
+        height: 150px;
+        width: 150px;
+        right: 5px;
+        background-color:hsl(214, 48%, 35%);
+        border-radius: 50%;
+    }
+    #pointers {
+        position: relative;
+        display: none;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        z-index: 2;
+        height: 200px;
+        width: 90%;
+    }
+    #pointersBottom {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 80px;
+        width: 50%;
+        margin-left: 25%;
+    }
+    .rules {
+        position: absolute;
+        bottom: 20px;
+        right: 40%;
+        display: flex;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        width: 80px;
+        height: 30px;
+        margin: 10px;
+        padding: 10px;
+    }   
+}
+.rules:hover {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 85px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    background-color: hsl(228, 25%, 67%);
+    cursor: pointer;
+}
+.rulesText {
+    position: relative;
+    color: #fff;
+    font-size: 1.5em; 
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
